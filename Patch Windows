@@ -1,0 +1,16 @@
+- name: Run Updates Windows Servers then reboot in 1 min
+  hosts: terminalservers
+  connection: winrm
+
+  tasks:
+    win_updates:
+      category_names:
+        - Application
+        - CriticalUpdates
+        - DefinitionUpdates
+        - SecurityUpdates
+        - Updates
+      whitelist:
+        - KB4093120
+    reboot: yes
+    reboot_timeout: 60
