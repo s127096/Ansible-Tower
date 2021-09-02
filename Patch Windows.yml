@@ -1,11 +1,5 @@
-- name: Run Updates Windows Servers then reboot in 1 min
-    tasks:
-    win_updates:
-      category_names:
-        - Application
-        - CriticalUpdates
-        - DefinitionUpdates
-        - SecurityUpdates
-        - Updates
-         reboot: yes
-    reboot_timeout: 60
+- name: Install all security updates with automatic reboots
+  ansible.windows.win_updates:
+    category_names:
+    - SecurityUpdates
+    reboot: yes
