@@ -1,9 +1,10 @@
 ---
 - name: Install Windows Patches
   hosts: all
+  server_selection: managed_server
   gather_facts: false
   tasks:
-  - name: Choose which Windows updates to install
+    - name: Choose which Windows updates to install
     win_updates:
       category_names:
       - SecurityUpdates
