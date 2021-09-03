@@ -4,10 +4,10 @@
   server_selection: managed_server
   gather_facts: false
   tasks:
-    - name: Choose which Windows updates to install
-      win_updates:
-        category_names:
-         - SecurityUpdates
-         - CriticalUpdates
-         - UpdateRollups
+  - name: Choose which Windows updates to install
+    win_updates:
+      category_names:
+        - SecurityUpdates
+        - CriticalUpdates
+        - UpdateRollups
       reboot: yes
